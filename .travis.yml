@@ -1,0 +1,14 @@
+language: node_js
+dist: xenial
+node_js:
+  - lts/*
+
+install:
+  - npm install
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - npm test
