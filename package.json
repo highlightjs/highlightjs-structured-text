@@ -20,15 +20,16 @@
     "CoDeSys",
     "PLC",
     "highlight.js",
-    "highlightjs",
+    "highlightjs", 
+    "syntax-highlight", 
     "syntax"
   ],
   "author": "Sergey Romanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Serhioromano/highlightjs-structured-text/issues"
+    "url": "https://github.com/highlightjs/highlightjs-structured-text/issues"
   },
-  "homepage": "https://github.com/highlightjs/highlightjs--structured-text#readme",
+  "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
   "devDependencies": {
     "highlight.js": "^9.15.6",
     "jasmine": "^3.3.1"
