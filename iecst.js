@@ -22,6 +22,7 @@ function hljsDefineIECST(hljs) {
             keyword:
                 "if then end_if elsif else case of end_case " +
                 "to do by while repeat end_while end_repeat for end_for from " +
+                "private public protected " +
                 "or and not xor le ge eq ne ge lt constant return exit at retain non_retain task with until using extend",
             title:
                 "program end_program function end_function function_block end_function_block configuration " +

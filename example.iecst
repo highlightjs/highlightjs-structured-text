@@ -5,7 +5,8 @@ CONFIGURATION DefaultCfg
   TASK NewTask  (INTERVAL := T#20ms);
   PROGRAM Main WITH NewTask : PLC_PRG;
 END_CONFIGURATION
- PROGRAM demo
+
+PROGRAM demo
   VAR_EXTERNAL
     Start_Stop: BOOL;
   END_VAR
@@ -18,7 +19,11 @@ END_CONFIGURATION
     Start_Stop := TRUE;
   END_IF
 END_PROGRAM;
- /* Get a square of the circle */
+
+FUNCTION_BLOCK PRIVATE MyName EXTENDS AnotherName
+	
+END_FUNCTION_BLOCK
+/* Get a square of the circle */
 FUNCTION csq : REAL 
   VAR_INPUT
     r: REAL;
