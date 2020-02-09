@@ -17,6 +17,7 @@ var module = module ? module : {}; // shim for browser use
 function hljsDefineIECST(hljs) {
     return {
         aliases: ["iecst", "scl", "stl", "structured-text"],
+        name: "Structured Text",
         case_insensitive: true,
         keywords: {
             keyword:
