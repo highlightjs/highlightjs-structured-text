@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
   "devDependencies": {
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.0.0",
     "jasmine": "^3.3.1"
   }
 }
