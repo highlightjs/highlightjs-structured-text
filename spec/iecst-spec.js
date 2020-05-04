@@ -1,4 +1,4 @@
-const hljs = require("highlight.js/lib/highlight");
+const hljs = require("highlight.js/lib/");
 const { definer: iecst } = require("../iecst");
 const fs = require("fs");
 const path = require("path");
