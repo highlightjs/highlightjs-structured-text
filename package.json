@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-structured-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
   "main": "iecst.js",
   "scripts": {
@@ -20,8 +20,8 @@
     "CoDeSys",
     "PLC",
     "highlight.js",
-    "highlightjs", 
-    "syntax-highlight", 
+    "highlightjs",
+    "syntax-highlight",
     "syntax"
   ],
   "author": "Sergey Romanov",
