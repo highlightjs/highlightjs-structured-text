@@ -6,6 +6,10 @@ This repository provides syntax highlighting for Highlight.js for Structured Tex
 
 We want to provide ST syntax highlights in VS Code Markdown editor and Markdown preview. And other cases when tutorials are published in the web.
 
+## Install
+
+    npm i highlightjs-structured-text --save
+
 ## Usage
 
 Include the `highlight.js` script package in your webpage or node app, load this module and register it with `hljs`. Follow instructions at [highlightjs](https://highlightjs.org/) to learn how to include the library and CSS.
