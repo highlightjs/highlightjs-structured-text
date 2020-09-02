@@ -35,7 +35,7 @@ hljsDefineIECST(hljs);
 hljs.initHighlightingOnLoad();
 ```
 
-Mark the code you want to highlight with the curl class:
+Mark the code you want to highlight with the iecst class:
 
 ```html
 <pre><code class="iecst">...</code></pre>
@@ -47,3 +47,26 @@ or use JavaScript to dynamically highlight text:
 hljs.registerLanguage('iecst', window.hljsDefineIECST);
 var highlighted = hljs.highlightAuto(text, ["iecst"]);
 ```
+
+## Example in Markdown-Generated Presentation
+#### (using [marp](https://marp.app/))
+
+Craft the IEC 61131 code that is desired and wrap it in a code-block defined with the tripple-backtick (`` ``` ``) and language as `iecst`.
+
+````markdown
+```iecst
+VAR
+    test : BOOL := TRUE ;
+    x : REAL := 5.23;
+    lx : LREAL;
+    myString : STRING(255) := 'this is a test string';
+END_VAR
+IF test THEN
+    lx := REAL_TO_LREAL( COS(x) );
+END_IF
+```
+````
+
+This will thus render as:
+
+![IEC 61131-3 Example](./61131example.png)
