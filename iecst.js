@@ -20,7 +20,6 @@ function hljsDefineIECST(hljs) {
         name: "Structured Text",
         case_insensitive: true,
         keywords: {
-            keywords: {
                 keyword:
                     "if then end_if elsif else case of end_case " +
                     "to do by while repeat end_while end_repeat for end_for from " +
