@@ -1,6 +1,6 @@
 {
     "name": "highlightjs-structured-text",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
     "main": "src/iecst.js",
     "scripts": {
@@ -14,6 +14,7 @@
         "type": "git",
         "url": "https://github.com/highlightjs/highlightjs-structured-text.git"
     },
+    "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
     "keywords": [
         "ST",
         "Structured Text",
