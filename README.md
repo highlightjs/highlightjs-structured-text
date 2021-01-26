@@ -12,38 +12,78 @@ We want to provide ST syntax highlights in VS Code Markdown editor and Markdown 
 
 ## Usage
 
+### Browser
+
 Include the `highlight.js` script package in your webpage or node app, load this module and register it with `hljs`. Follow instructions at [highlightjs](https://highlightjs.org/) to learn how to include the library and CSS.
 
 If you're not using a build system and just want to embed this in your webpage:
 
 ```html
 <script type="text/javascript" src="/path/to/highlight.pack.js"></script>
-<script type="text/javascript" src="/path/to/highlightjs-structured-text/iecst.js"></script>
+<script type="text/javascript" src="/path/to/highlightjs-structured-text/dist/iecst.min.js"></script>
 <script type="text/javascript">
-    hljs.registerLanguage('iecst', window.hljsDefineIECST);
     hljs.initHighlightingOnLoad();
 </script>
 ```
+
+### Nodejs
 
 If you're using webpack / rollup / browserify / node:
 
 ```javascript
 var hljs = require('highlightjs');
-var hljsDefineCUrl = require('highlightjs-structured-text');
+var hljsDefineIECST = require('highlightjs-structured-text');
 
-hljsDefineIECST(hljs);
+hljs.registerLanguage('iecst', hljsDefineIECST);
 hljs.initHighlightingOnLoad();
 ```
 
-Mark the code you want to highlight with the curl class:
+Mark the code you want to highlight with the ST class:
 
 ```html
 <pre><code class="iecst">...</code></pre>
 ```
 
-or use JavaScript to dynamically highlight text:
+### Programmatically
+
+Or use JavaScript to programmatically highlight text string:
 
 ```javascript
-hljs.registerLanguage('iecst', window.hljsDefineIECST);
-var highlighted = hljs.highlightAuto(text, ["iecst"]);
+hljs.registerLanguage('iecst', hljsDefineIECST);
+var highlighted = hljs.highlightAuto(text_string, ["iecst"]);
+```
+
+### React
+
+
+```js
+import React, {Component} from 'react'
+import 'highlight.js/scss/darcula.scss' # your favourite theme
+import cypher from './iecst'
+import hljs from 'highlight.js'
+hljs.registerLanguage('iecst', iecst);
+
+class Highlighter extends Component
+{
+  constructor(props)
+  {
+    super(props);
+    hljs.initHighlightingOnLoad();
+  }
+
+  render()
+  {
+    let {children} = this.props;
+    return
+    {
+      <pre ref={(node) => this.node = node}>
+        <code className="iecst">
+          {children}
+        </code>
+      </pre>
+    }
+  }
+}
+
+export default Highlighter;
 ```

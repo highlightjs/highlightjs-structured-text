@@ -1,37 +1,38 @@
 {
-  "name": "highlightjs-structured-text",
-  "version": "1.0.0",
-  "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
-  "main": "iecst.js",
-  "scripts": {
-    "test": "jasmine"
-  },
-  "files": [
-    "iecst.js"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/highlightjs/highlightjs-structured-text.git"
-  },
-  "keywords": [
-    "ST",
-    "Structured Text",
-    "IEC 61131-3",
-    "CoDeSys",
-    "PLC",
-    "highlight.js",
-    "highlightjs",
-    "syntax-highlight",
-    "syntax"
-  ],
-  "author": "Sergey Romanov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/highlightjs/highlightjs-structured-text/issues"
-  },
-  "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
-  "devDependencies": {
-    "highlight.js": "^10.0.2",
-    "jasmine": "^3.5.0"
-  }
+    "name": "highlightjs-structured-text",
+    "version": "1.1.0",
+    "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
+    "main": "src/iecst.js",
+    "scripts": {
+        "test": "jasmine"
+    },
+    "files": [
+        "src/iecst.js",
+        "dist/iecst.min.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/highlightjs/highlightjs-structured-text.git"
+    },
+    "keywords": [
+        "ST",
+        "Structured Text",
+        "IEC 61131-3",
+        "CoDeSys",
+        "PLC",
+        "highlight.js",
+        "highlightjs",
+        "syntax-highlight",
+        "syntax"
+    ],
+    "author": "Sergey Romanov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/highlightjs/highlightjs-structured-text/issues"
+    },
+    "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
+    "devDependencies": {
+        "highlight.js": "^10.0.2",
+        "jasmine": "^3.5.0"
+    }
 }
