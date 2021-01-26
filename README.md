@@ -38,11 +38,7 @@ hljs.registerLanguage('iecst', hljsDefineIECST);
 hljs.initHighlightingOnLoad();
 ```
 
-<<<<<<< HEAD
-Mark the code you want to highlight with the ST class:
-=======
 Mark the code you want to highlight with the iecst class:
->>>>>>> 4205d554c722c25964b06bb888ca83de43f425b0
 
 ```html
 <pre><code class="iecst">...</code></pre>
