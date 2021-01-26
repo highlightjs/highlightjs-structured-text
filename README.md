@@ -38,7 +38,11 @@ hljs.registerLanguage('iecst', hljsDefineIECST);
 hljs.initHighlightingOnLoad();
 ```
 
+<<<<<<< HEAD
 Mark the code you want to highlight with the ST class:
+=======
+Mark the code you want to highlight with the iecst class:
+>>>>>>> 4205d554c722c25964b06bb888ca83de43f425b0
 
 ```html
 <pre><code class="iecst">...</code></pre>
@@ -87,3 +91,26 @@ class Highlighter extends Component
 
 export default Highlighter;
 ```
+
+## Example in Markdown-Generated Presentation
+#### (using [marp](https://marp.app/))
+
+Craft the IEC 61131 code that is desired and wrap it in a code-block defined with the tripple-backtick (`` ``` ``) and language as `iecst`.
+
+````markdown
+```iecst
+VAR
+    test : BOOL := TRUE ;
+    x : REAL := 5.23;
+    lx : LREAL;
+    myString : STRING(255) := 'this is a test string';
+END_VAR
+IF test THEN
+    lx := REAL_TO_LREAL( COS(x) );
+END_IF
+```
+````
+
+This will thus render as:
+
+![IEC 61131-3 Example](./61131example.png)
