@@ -50,6 +50,16 @@ module.exports = function (hljs) {
                 relevance: 0,
             },
             {
+                // Conversion Functions *_TO_**
+                className: "built_in",
+                begin: "(ANY|BOOL|BYTE|D?L?WORD|L?TIME|DATE|DT|TOD|W?CHAR|W?STRING|U?S?D?L?INT|L?REAL)_TO_(BOOL|BYTE|D?L?WORD|L?TIME|DATE|DT|TOD|W?CHAR|W?STRING|U?S?D?L?INT|L?REAL)"
+            },
+            {
+                // Conversion Functions TO_**
+                className: "built_in",
+                begin: "TO_(BOOL|BYTE|D?L?WORD|L?TIME|DATE|DT|TOD|W?CHAR|W?STRING|U?S?D?L?INT|L?REAL)"
+            },
+            {
                 className: "symbol",
                 begin: "(D|T|DT|TOD)#[0-9:\\-_shmyd]*",
             },
@@ -74,7 +84,7 @@ module.exports = function (hljs) {
             },
             {
                 className: "symbol",
-                begin: "%(I|Q|M)(X|B|W|D|L)[0-9.]*",
+                begin: "%(I|Q|M)(X|B|W|D|L)[0-9\\.]*",
             },
             {
                 className: "symbol",
