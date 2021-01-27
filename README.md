@@ -98,7 +98,7 @@ First create file `engine.js`
 const { Marp } = require('@marp-team/marp-core')
 const hljs = require('highlight.js')
 const iecst = require('highlightjs-structured-text')
-hljs.registerLanguage("ices", iecst)
+hljs.registerLanguage("iecst", iecst)
 
 module.exports = (opts) => {
   const marp = new Marp(opts)
