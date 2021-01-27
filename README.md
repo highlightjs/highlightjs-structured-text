@@ -87,3 +87,37 @@ class Highlighter extends Component
 
 export default Highlighter;
 ```
+
+### Marp
+
+To use in [marp](https://marp.app)
+
+First create file `engine.js`
+
+```js
+const { Marp } = require('@marp-team/marp-core')
+const hljs = require('highlight.js')
+const iecst = require('highlightjs-structured-text')
+hljs.registerLanguage("ices", iecst)
+
+module.exports = (opts) => {
+  const marp = new Marp(opts)
+
+  marp.highlighter = (code, lang) => {
+    if (lang) {
+      return hljs.getLanguage(lang)
+        ? hljs.highlight(lang, code, true).value
+        : ''
+    }
+    return hljs.highlightAuto(code).value
+  }
+
+  return marp
+}
+```
+
+And now when you build with CLI add engine parameter,
+
+```bash
+npx marp --engine ./enjine.js ./slides.md
+```
