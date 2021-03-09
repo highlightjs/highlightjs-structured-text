@@ -97,9 +97,3 @@ module.exports = function (hljs) {
         ],
     };
 };
-
-// module.exports = function (hljs) {
-//     hljs.registerLanguage("iecst", hljsDefineIECST);
-// };
-
-// module.exports.definer = hljsDefineIECST;
