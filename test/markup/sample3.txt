@@ -1,0 +1,14 @@
+PROGRAM demo
+  VAR_EXTERNAL
+    Start_Stop: BOOL;
+  END_VAR
+  VAR
+    a : REAL; // Another comment
+    todTest: TIME_OF_DAY := TOD#12:55;
+  END_VAR
+  a := csq(12.5) + 16#FAC0;
+  IF a > REAL#100 THEN
+    Start_Stop := TRUE;
+    TON1(IN := TRUE, PT := T#1S);
+  END_IF
+END_PROGRAM

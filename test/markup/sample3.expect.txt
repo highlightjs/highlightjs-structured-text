@@ -1,0 +1,14 @@
+<span class="hljs-title">PROGRAM</span> demo
+  <span class="hljs-title">VAR_EXTERNAL</span>
+    Start_Stop: <span class="hljs-built_in">BOOL</span>;
+  <span class="hljs-title">END_VAR</span>
+  <span class="hljs-title">VAR</span>
+    a : <span class="hljs-built_in">REAL</span>; <span class="hljs-comment">// Another comment</span>
+    todTest: <span class="hljs-built_in">TIME_OF_DAY</span> := <span class="hljs-symbol">TOD#12:55</span>;
+  <span class="hljs-title">END_VAR</span>
+  a := csq(<span class="hljs-number">12.5</span>) + <span class="hljs-number">16#</span>FAC0;
+  <span class="hljs-keyword">IF</span> a &gt; <span class="hljs-symbol">REAL#</span><span class="hljs-number">100</span> <span class="hljs-keyword">THEN</span>
+    Start_Stop := <span class="hljs-literal">TRUE</span>;
+    TON1(IN := <span class="hljs-literal">TRUE</span>, PT := <span class="hljs-symbol">T#1S</span>);
+  <span class="hljs-keyword">END_IF</span>
+<span class="hljs-title">END_PROGRAM</span>

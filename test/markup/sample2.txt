@@ -1,0 +1,5 @@
+TYPE StructName : STRUCT
+        xStart : BOOL; (* Start *)
+        xStop : BOOL; (* Stop *)
+    END_STRUCT
+END_TYPE
