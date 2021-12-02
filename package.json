@@ -27,7 +27,7 @@
         "syntax"
     ],
     "author": "Sergey Romanov",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/highlightjs/highlightjs-structured-text/issues"
     },
