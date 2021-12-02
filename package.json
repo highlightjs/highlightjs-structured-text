@@ -5,7 +5,7 @@
     "main": "src/iecst.js",
     "scripts": {
         "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
-        "test": "./node_modules/.bin/mocha --reporter spec"
+        "test": "npx mocha --reporter spec"
     },
     "files": [
         "src/iecst.js",
@@ -33,13 +33,10 @@
     },
     "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
     "devDependencies": {
-        "highlight.js": "^10.4.1",
-        "jasmine": "^3.5.0"
+        "mocha": "^8.3.2",
+        "should": "^13.2.3"
     },
     "dependencies": {
-        "highlightjs": "^9.16.2",
-        "mocha": "^8.3.2",
-        "should": "^13.2.3",
-        "user": "0.0.0"
+        "highlight.js": "^10.4.1"
     }
 }
