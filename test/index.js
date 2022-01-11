@@ -2,7 +2,7 @@ var should = require('should');
 var promisify = require("util").promisify;
 let path = require('path');
 
-let hljs = require("highlightjs");
+let hljs = require("highlight.js");
 let iecst = require("../src/iecst");
 hljs.registerLanguage("iecst", iecst);
 
