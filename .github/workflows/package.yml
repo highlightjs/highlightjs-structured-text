@@ -24,25 +24,25 @@ jobs:
           echo "::endgroup::"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  build-github:  
-    name: Build and Publish to GITHUB
-    runs-on: ubuntu-latest
-    permissions: 
-      contents: read
-      packages: write 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-          registry-url: 'https://npm.pkg.github.com'
-      - run: |
-          npm ci
-          npm pack
-          file=$(realpath $(ls -t *.tgz | head -1))
-          echo "::notice::generated ${file}"
-          echo "::group::Start publish"
-          npm publish ${file}
-          echo "::endgroup::"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+  # build-github:  
+  #   name: Build and Publish to GITHUB
+  #   runs-on: ubuntu-latest
+  #   permissions: 
+  #     contents: read
+  #     packages: write 
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '16.x'
+  #         registry-url: 'https://npm.pkg.github.com'
+  #     - run: |
+  #         npm ci
+  #         npm pack
+  #         file=$(realpath $(ls -t *.tgz | head -1))
+  #         echo "::notice::generated ${file}"
+  #         echo "::group::Start publish"
+  #         npm publish ${file}
+  #         echo "::endgroup::"
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
