@@ -18,8 +18,10 @@ jobs:
           npm ci
           npm pack
           file=$(realpath $(ls -t *.tgz | head -1))
-          echo "::message::generated ${file}"
-      - run: npm publish ${file}
+          echo "::notice::generated ${file}"
+          echo "::group::Start publish"
+          npm publish ${file}
+          echo "::endgroup::"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   build-github:  
@@ -35,7 +37,9 @@ jobs:
           npm ci
           npm pack
           file=$(realpath $(ls -t *.tgz | head -1))
-          echo "::message::generated ${file}"
-      - run: npm publish ${file}
+          echo "::notice::generated ${file}"
+          echo "::group::Start publish"
+          npm publish ${file}
+          echo "::endgroup::"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
