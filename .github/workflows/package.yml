@@ -14,8 +14,11 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm publish
+      - run: |
+          npm ci
+          npm pack
+          file=$(realpath $(ls -t *.tgz | head -1))
+          npm publish ${file}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   # build-github:  
@@ -28,6 +31,6 @@ jobs:
   #         node-version: '16.x'
   #         registry-url: 'https://npm.pkg.github.com'
   #     - run: npm ci
-  #     - run: npm publish
+  #     - run: npm publishnpm 
   #       env:
   #         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
