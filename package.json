@@ -1,6 +1,6 @@
 {
     "name": "highlightjs-structured-text",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
     "main": "src/iecst.js",
     "scripts": {
