@@ -1,4 +1,4 @@
-name: Publish to NPM 
+name: Publish to NPM and Github
 on:
   push:
     tags:
@@ -18,19 +18,24 @@ jobs:
           npm ci
           npm pack
           file=$(realpath $(ls -t *.tgz | head -1))
-          npm publish ${file}
+          echo "::message::generated ${file}"
+      - run: npm publish ${file}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  # build-github:  
-  #   name: Build and Publish to GITHUB
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v2
-  #       with:
-  #         node-version: '16.x'
-  #         registry-url: 'https://npm.pkg.github.com'
-  #     - run: npm ci
-  #     - run: npm publishnpm 
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+  build-github:  
+    name: Build and Publish to GITHUB
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: |
+          npm ci
+          npm pack
+          file=$(realpath $(ls -t *.tgz | head -1))
+          echo "::message::generated ${file}"
+      - run: npm publish ${file}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
