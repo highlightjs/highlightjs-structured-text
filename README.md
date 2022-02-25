@@ -22,7 +22,7 @@ If you're not using a build system and just want to embed this in your webpage:
 <script type="text/javascript" src="/path/to/highlight.pack.js"></script>
 <script type="text/javascript" src="/path/to/highlightjs-structured-text/dist/iecst.min.js"></script>
 <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
+    hljs.highlightAll();
 </script>
 ```
 
