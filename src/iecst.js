@@ -98,7 +98,7 @@ module.exports = function (hljs) {
             {
                 // GX Works2 Symbolic Addresses
                 className: "literal",
-                begin: "\\b(D|R|M)[0-9]{1,4}",
+                begin: "\\b(D|R|M)[0-9]{1,4}(Z[0-9]{1})?",
             },
             {
                 // GX Works2 Symbolic Addresses

@@ -6,11 +6,13 @@
     "scripts": {
         "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
         "test": "npx mocha --reporter spec",
-        "build": "npx terser src/iecst.js --output dist/iecst.min.js"
+        "build": "npx terser src/iecst.js --output dist/iecst.min.js",
+        "pub": "npm version patch, delete logal tag, npm publish"
     },
     "files": [
         "src/iecst.js",
-        "dist/iecst.min.js"
+        "dist/iecst.min.js",
+        "CHANGELOG.md"
     ],
     "repository": {
         "type": "git",
