@@ -55,7 +55,6 @@ var highlighted = hljs.highlightAuto(text_string, ["iecst"]);
 
 ### React
 
-
 ```js
 import React, {Component} from 'react'
 import 'highlight.js/scss/darcula.scss' # your favourite theme
