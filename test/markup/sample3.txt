@@ -9,6 +9,7 @@ PROGRAM demo
   a := csq(12.5) + 16#FAC0;
   IF a > REAL#100 THEN
     Start_Stop := TRUE;
+    M0 := X1 AND Y2 OR (D100 > 0);
     TON1(IN := TRUE, PT := T#1S);
   END_IF
 END_PROGRAM

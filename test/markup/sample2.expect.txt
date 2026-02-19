@@ -1,5 +1,5 @@
-<span class="hljs-title">TYPE</span> StructName : <span class="hljs-title">STRUCT</span>
-        xStart : <span class="hljs-built_in">BOOL</span>; <span class="hljs-comment">(* Start *)</span>
-        xStop : <span class="hljs-built_in">BOOL</span>; <span class="hljs-comment">(* Stop *)</span>
-    <span class="hljs-title">END_STRUCT</span>
-<span class="hljs-title">END_TYPE</span>
+<span class="hljs-tag">TYPE</span> StructName : <span class="hljs-tag">STRUCT</span>
+        xStart : <span class="hljs-built_in">BOOL</span><span class="hljs-operator">;</span> <span class="hljs-comment">(* Start *)</span>
+        xStop : <span class="hljs-built_in">BOOL</span><span class="hljs-operator">;</span> <span class="hljs-comment">(* Stop *)</span>
+    <span class="hljs-tag">END_STRUCT</span>
+<span class="hljs-tag">END_TYPE</span>

@@ -1,14 +1,15 @@
-<span class="hljs-title">PROGRAM</span> demo
+<span class="hljs-tag">PROGRAM</span> demo
   <span class="hljs-title">VAR_EXTERNAL</span>
-    Start_Stop: <span class="hljs-built_in">BOOL</span>;
+    Start_Stop: <span class="hljs-built_in">BOOL</span><span class="hljs-operator">;</span>
   <span class="hljs-title">END_VAR</span>
   <span class="hljs-title">VAR</span>
-    a : <span class="hljs-built_in">REAL</span>; <span class="hljs-comment">// Another comment</span>
-    todTest: <span class="hljs-built_in">TIME_OF_DAY</span> := <span class="hljs-symbol">TOD#12:55</span>;
+    a : <span class="hljs-built_in">REAL</span><span class="hljs-operator">;</span> <span class="hljs-comment">// Another comment</span>
+    todTest: <span class="hljs-built_in">TIME_OF_DAY</span> <span class="hljs-operator">:=</span> <span class="hljs-literal">TOD#12:55</span><span class="hljs-operator">;</span>
   <span class="hljs-title">END_VAR</span>
-  a := csq(<span class="hljs-number">12.5</span>) + <span class="hljs-number">16#</span>FAC0;
-  <span class="hljs-keyword">IF</span> a &gt; <span class="hljs-symbol">REAL#</span><span class="hljs-number">100</span> <span class="hljs-keyword">THEN</span>
-    Start_Stop := <span class="hljs-literal">TRUE</span>;
-    TON1(IN := <span class="hljs-literal">TRUE</span>, PT := <span class="hljs-symbol">T#1S</span>);
+  a <span class="hljs-operator">:=</span> <span class="hljs-function">csq</span><span class="hljs-punctuation">(</span><span class="hljs-number">12.5</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <span class="hljs-number">16#FAC0</span><span class="hljs-operator">;</span>
+  <span class="hljs-keyword">IF</span> a <span class="hljs-operator">&gt;</span> <span class="hljs-number">REAL#100</span> <span class="hljs-keyword">THEN</span>
+    Start_Stop <span class="hljs-operator">:=</span> <span class="hljs-literal">TRUE</span><span class="hljs-operator">;</span>
+    <span class="hljs-literal">M0</span> <span class="hljs-operator">:=</span> <span class="hljs-literal">X1</span> <span class="hljs-operator">AND</span> <span class="hljs-literal">Y2</span> <span class="hljs-operator">OR</span> <span class="hljs-punctuation">(</span><span class="hljs-literal">D100</span> <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span><span class="hljs-punctuation">)</span><span class="hljs-operator">;</span>
+    <span class="hljs-function">TON1</span><span class="hljs-punctuation">(</span>IN <span class="hljs-operator">:=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">,</span> PT <span class="hljs-operator">:=</span> <span class="hljs-literal">T#1S</span><span class="hljs-punctuation">)</span><span class="hljs-operator">;</span>
   <span class="hljs-keyword">END_IF</span>
-<span class="hljs-title">END_PROGRAM</span>
+<span class="hljs-tag">END_PROGRAM</span>

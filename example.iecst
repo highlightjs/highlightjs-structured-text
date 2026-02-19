@@ -17,6 +17,7 @@ PROGRAM demo
   a := csq(12.5); 16#FAC0 2#1001_0110
   IF a > REAL#100 THEN
     Start_Stop := TRUE;
+    M0 := X0 AND Y0;
   END_IF
 END_PROGRAM;
 
@@ -31,6 +32,6 @@ FUNCTION csq : REAL
   VAR CONSTANT
     c_pi : REAL := 3.14;
   END_VAR
-  TON(IN := TRUE, PT := T#10S);
+  TON(IN := D100, PT := T#10S);
   csq := ABS(c_pi * (r * 2));
 END_FUNCTION
