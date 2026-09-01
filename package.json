@@ -36,7 +36,7 @@
     },
     "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
     "devDependencies": {
-        "mocha": "^8.3.2",
+        "mocha": "^12.0.0",
         "should": "^13.2.3"
     },
     "dependencies": {

@@ -9,10 +9,10 @@ jobs:
     name: Build and Publish to NPM
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
       - run: |
           npm ci
@@ -24,17 +24,17 @@ jobs:
           echo "::endgroup::"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  build-github:  
+  build-github:
     name: Build and Publish to GITHUB
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: read
-      packages: write 
+      packages: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '22.x'
           registry-url: 'https://npm.pkg.github.com'
       - run: |
           npm ci
@@ -45,4 +45,4 @@ jobs:
           npm publish ${file}
           echo "::endgroup::"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
