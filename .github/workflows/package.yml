@@ -4,9 +4,10 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
-  id-token: write  # Required for OIDC
+  id-token: write  # Required for OIDC (Trusted Publishing)
   contents: read
 
 jobs:
@@ -20,11 +21,32 @@ jobs:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false  # never use caching in release builds
+
+      - name: Debug Trusted Publishing (OIDC)
+        run: |
+          echo "ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:+SET}"
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+SET}"
+          if [ -z "$ACTIONS_ID_TOKEN_REQUEST_URL" ] || [ -z "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
+            echo "!!! id-token: write NOT applied -> OIDC env vars missing"
+            exit 0
+          fi
+          RESP=$(curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm:registry.npmjs.org")
+          JWT=$(printf '%s' "$RESP" | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{console.log(JSON.parse(d).value||'')}catch(e){console.log('')}})")
+          if [ -z "$JWT" ]; then
+            echo "id_token request failed. Raw response: $(printf '%s' "$RESP" | head -c 400)"
+            exit 0
+          fi
+          echo "id_token acquired: yes (length ${#JWT})"
+          echo "--- npm OIDC token exchange response ---"
+          curl -sS -w "\nHTTP_STATUS:%{http_code}\n" -X POST \
+            -H "Authorization: Bearer $JWT" \
+            "https://registry.npmjs.org/-/npm/v1/oidc/token/exchange/package/highlightjs-structured-text"
+
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-      - run: npm publish  # Or: npm stage publish
-      
+      - run: npm publish
+
 # jobs:
 #   build-npm:
 #     name: Build and Publish to NPM
