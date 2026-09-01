@@ -1,10 +1,10 @@
 {
     "name": "highlightjs-structured-text",
-    "version": "1.7.10",
+    "version": "1.7.11",
     "description": "highlight.js syntax definition for Structured Text IEC 61131-3 language",
     "main": "src/iecst.js",
     "scripts": {
-        "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
+        "postpublish": "if [ -z \"$GITHUB_ACTIONS\" ]; then PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags; fi",
         "test": "npx mocha --reporter spec",
         "build": "npx terser src/iecst.js --output dist/iecst.min.js",
         "pub": "npm version patch, delete logal tag, npm publish"
@@ -37,7 +37,8 @@
     "homepage": "https://github.com/highlightjs/highlightjs-structured-text#readme",
     "devDependencies": {
         "mocha": "^12.0.0",
-        "should": "^13.2.3"
+        "should": "^13.2.3",
+        "terser": "^5.51.2"
     },
     "dependencies": {
         "highlight.js": "^11.11.0"
