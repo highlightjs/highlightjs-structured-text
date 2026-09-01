@@ -43,10 +43,10 @@ jobs:
             "https://registry.npmjs.org/-/npm/v1/oidc/token/exchange/package/highlightjs-structured-text"
 
       - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-      - run: npm publish
-
+      - run: npm pack
+      - run: file=$(realpath $(ls -t *.tgz | head -1))
+      - run: npm publish ${file}
+      
 # jobs:
 #   build-npm:
 #     name: Build and Publish to NPM
@@ -61,10 +61,8 @@ jobs:
 #           node-version: '22.x'
 #           registry-url: 'https://registry.npmjs.org'
 #       - run: |
+
+# - run: npm run build --if-present
+# - run: npm test
+# - run: npm publish
 #           npm ci
-#           npm pack
-#           file=$(realpath $(ls -t *.tgz | head -1))
-#           echo "::notice::generated ${file}"
-#           echo "::group::Start publish"
-#           npm publish ${file}
-#           echo "::endgroup::"
